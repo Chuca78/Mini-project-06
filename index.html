@@ -1,0 +1,71 @@
+<!-- API key: e55c7e382f794c24ff4d937e890f4431
+
+
+https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7e382f794c24ff4d937e890f4431; -->
+
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5 day weather forecast</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header class="jumbotron">
+        <h1 class="display-3">Weather Dashboard</h1>
+        <!-- <p class="lead">A simple weather app</p> -->
+        <p id="currentDay" class="lead"></p>
+    </header>
+  
+      <section>
+        <!-- Image -->
+        <img src="https://via.placeholder.com/200" alt="placeholder image"/><br>
+  
+        <div class="container">
+          <div id="hour">
+            <div class="row"></div>
+            <div class="textarea"></div>
+          </div>
+        </div>
+
+      </section>
+  
+
+      <!-- todo: use these GPS coordinates for the cities -->
+        <!-- GPS Coordinates by city -->
+        <!-- Atlanta -->
+        <!-- 33.641756279663184, -84.44453746058473 -->
+        <!-- Charlotte-->
+        <!-- 35.22731679270498, -80.94865412987487 -->
+        <!-- Chicago -->
+        <!-- 41.9802266281285, -87.90895962753375 -->
+        <!-- Dallas -->
+        <!-- 32.8998682634201, -97.04025595132558 -->
+        <!-- Denver -->
+        <!-- 39.856491609181006, -104.67366250086123 -->
+        <!-- Kansas City -->
+        <!-- 39.30357787753539, -94.70916304320826 -->
+        <!-- Los Angeles -->
+        <!-- 33.94152657558148, -118.40857291824784 -->
+        <!-- New York -->
+        <!-- 40.77714644041703, -73.87390152966489 -->
+        <!-- Orlando -->
+        <!-- 28.41792611851811, -81.3042738490861 -->
+        <!-- Seattle -->
+        <!-- 47.447995345602216, -122.30891536195067 -->
+
+
+      <!-- this is the link for the weather data -->
+        <a href="https://api.openweathermap.org/data/2.5/forecast?lat=35.22731679270498&lon=-80.94865412987487&mode=xml&appid=e55c7e382f794c24ff4d937e890f4431&units=imperial">This is a link to Weather</a>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
