@@ -3,7 +3,6 @@
 
 https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7e382f794c24ff4d937e890f4431; -->
 
-
 <!doctype html>
 
 <html lang="en">
@@ -16,26 +15,96 @@ https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7
 </head>
 
 <body>
-    <header class="jumbotron">
-        <h1 class="display-3">Weather Dashboard</h1>
-        <!-- <p class="lead">A simple weather app</p> -->
-        <p id="currentDay" class="lead"></p>
-    </header>
-  
-      <section>
-        <!-- Image -->
-        <img src="https://via.placeholder.com/200" alt="placeholder image"/><br>
-  
-        <div class="container">
-          <div id="hour">
-            <div class="row"></div>
-            <div class="textarea"></div>
-          </div>
+  <header class="jumbotron">
+    <h1 class="display-3">Weather Dashboard</h1>
+        
+  </header>
+          
+    <div class="container">
+      <div id="current">
+        <div id="currentTime" class="lead"></div>
+        <div id="currentWeather" class="weather">
+          <!-- todo: fix this icon size -->
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
+          <div class="weatherItem"><p>temperature</p><p>97</p></div>
+          <div class="weatherItem"><p>wind speed</p><p>50</p></div>
+          <div class="weatherItem"><p>humidity</p><p>95%</p></div>
         </div>
+      </div>
 
-      </section>
+      <div>
+        <div id="city" class="city">Charlotte</div>
+        <div id="coords" class="coords">35.22731679270498, -80.94865412987487</div>
+      </div>
+    </div>
+
+    <div id="weatherBlock" class="weatherBlock">
+      
+      <div class="day">
+      <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
+      <div id="today" class="today">
+        <div class="dayLabel">Today's Weather</div>
+        <div class="weatherItem"><p>temperature</p><p>97</p></div>
+        <div class="weatherItem"><p>wind speed</p><p>50</p></div>
+        <div class="weatherItem"><p>humidity</p><p>0%</p></div>
+      </div>
+    </div>
+
+
+      <div id="forecast" class="forecast">
+        
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
+        <div class="dayLabel">Tomorrow</div>
+        <div class="weatherItem"><p>temperature high</p><p>97</p></div>
+        <div class="weatherItem"><p>temperature low</p><p>97</p></div>
+        <div class="weatherItem"><p>wind speed</p><p>50</p></div>
+        <div class="weatherItem"><p>humidity</p><p>95%</p></div>
+      </div>
+
+      <div id="forecast" class="forecast">
+
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
+        <div class="dayLabel">Day 2</div>
+        <div class="weatherItem"><p>temperature high</p><p>97</p></div>
+        <div class="weatherItem"><p>temperature low</p><p>97</p></div>
+        <div class="weatherItem"><p>wind speed</p><p>50</p></div>
+        <div class="weatherItem"><p>humidity</p><p>95%</p></div>
+      </div>
+
+      <div id="forecast" class="forecast">
+        
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
+        <div class="dayLabel">Day 3</div>
+        <div class="weatherItem"><p>temperature high</p><p>97</p></div>
+        <div class="weatherItem"><p>temperature low</p><p>97</p></div>
+        <div class="weatherItem"><p>wind speed</p><p>50</p></div>
+        <div class="weatherItem"><p>humidity</p><p>95%</p></div>
+      </div>
+
+      <div id="forecast" class="forecast">
+       
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
+        <div class="dayLabel">Day 4</div>
+        <div class="weatherItem"><p>temperature high</p><p>97</p></div>
+        <div class="weatherItem"><p>temperature low</p><p>97</p></div>
+        <div class="weatherItem"><p>wind speed</p><p>50</p></div>
+        <div class="weatherItem"><p>humidity</p><p>95%</p></div>
+      </div>
+
+      <div id="forecast" class="forecast">
+        
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
+        <div class="dayLabel">Day 5</div>
+        <div class="weatherItem"><p>temperature high</p><p>97</p></div>
+        <div class="weatherItem"><p>temperature low</p><p>97</p></div>
+        <div class="weatherItem"><p>wind speed</p><p>50</p></div>
+        <div class="weatherItem"><p>humidity</p><p>95%</p></div>
+      </div>
+    </div>
+
+
+
   
-
       <!-- todo: use these GPS coordinates for the cities -->
         <!-- GPS Coordinates by city -->
         <!-- Atlanta -->
@@ -61,11 +130,11 @@ https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7
 
 
       <!-- this is the link for the weather data -->
-        <a href="https://api.openweathermap.org/data/2.5/forecast?lat=35.22731679270498&lon=-80.94865412987487&mode=xml&appid=e55c7e382f794c24ff4d937e890f4431&units=imperial">This is a link to Weather</a>
-
+  <a href="https://api.openweathermap.org/data/2.5/forecast?lat=35.22731679270498&lon=-80.94865412987487&mode=xml&appid=e55c7e382f794c24ff4d937e890f4431&units=imperial">This is a link to Weather</a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
+

@@ -1,70 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;400;700&display=swap');
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1;
+  background:url("/UT_Austin/Mini-project-06/assets/images/weather.jpg");
+  font-family:'Roboto Slab', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* todo: check scroll hidden */
+  /* disables scroll */
+  /* overflow: hidden; */
+  height:100vh;
+}
+
+.container{
+  /* todo: check container padding */
+  padding: 20px;
+  /* todo: fix font color */
+  /* font color */
+  /* color:white; */
+}
+
+#current{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#currentTime{
+  /* todo: fix time font */
+  font-size: 30px;
+  font-weight: 100;
+}
+  
+/* todo: fix box for current weather */
+#current #currentWeather{
+  display:flex;
+  /* fix this width */
+  width:50vw;
+  flex-direction: column;
+  justify-content: space-between;
+  background:grey;
+  padding:20px;
+  border-radius: 15px;
+  margin:10px;
+  /* border */
+  border:2px solid white; */
+}
+
+#current .weatherItem{
+  display:flex;
+  justify-content: space-between;
+}
+
+.weatherIcon{
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  display: block;
+}
+
+.day{
+  background:grey;
+  display: flex;
+  margin: 0 10px;
+  padding:10px;
+  border-radius: 5px;
+  border:2px solid white;
+  text-align: center;
+  /* test code to make sure I am targeting the right thing */
+  /* background:white; */
+}
+
+#forecast{
+  background:grey;
+}
+
+.weatherBlock{
+  background:blue;
+  /* padding:20px; */
+  /* position:fixed; */
+  display:flex;
+  /* font color */
+  /* color:white; */
+  width:100%;
+  align-items:center;
+  justify-content:center;
+}
+
+.dayLabel{
+  padding: 5px 15px;
+  background:darkgray;
+  border-radius: 5px;
+  border:2px solid white;
+  text-align: center;
+}
+
+#today{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+}
+
+#weatherBlock .weatherItem{
+  display:flex;
+  flex-direction: column;
+  /* test code to make sure I am targeting the right thing */
+  /* background:white; */
+
+}
+
+#forecast{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  margin: 50px 10px;
+  padding:10px;
+  border-radius: 5px;
+  border:2px solid white;
+  text-align: center;
+  /* test code to make sure I am targeting the right thing */
+  /* background:white; */
+}
+
+/* media query for medium screens */
+@media screen and (max-width: 992px) {
+  .weatherBlock{
+    justify-content: start;
+    align-items: none;
+    overflow-y: scroll;
+    padding:10px;
+    /* todo: remove background color - for testing only */
+    background:purple;
   }
-  
-  textarea {
-    background: transparent;
-    border: none;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
-    width: 100%;
-    height: 100%;
+
+  #current #currentWeather{
+    display:flex;
+    /* fix this width */
+    width:90vw;
+}
+}
+
+/* media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .weatherBlock{
+    justify-content: start;
+    align-items: none;
+    overflow-y: scroll;
+    padding:10px;
+    /* todo: remove background color - for testing only */
+    background:red;
   }
-  
-  .jumbotron {
-    text-align: center;
-    background-color: transparent;
-    color: black;
-    border-radius: 0;
-    border-bottom: 10px solid black;
-  }
-  
-  .description {
-    white-space: pre-wrap;
-  }
-  
-  .time-block {
-    text-align: center;
-    border-radius: 15px;
-  }
-  
-  .row {
-    white-space: pre-wrap;
-    border-top: 1px solid white;
-  }
-  
-  .hour {
-    background-color: #ffffff;
-    color: #000000;
-    border-top: 1px dashed #000000;
-    border-bottom: 1px dashed #000000;
-    text-align: center;
-    padding-top: 1em;
-    width: 10%;
-  }
-  
-  .saveBtn {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06aed5;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    height: 100%;
-  }
-  
-  .saveBtn:hover {
-    background-color: rgb(25, 68, 124);
-    color: black;
-  }
-  
-  .saveBtn:active {
-    background-color: green;
-    transform: scale(0.98);
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  } 
-  
+
+  #current #currentWeather{
+    display:flex;
+    /* fix this width */
+    width:90vw;
+}
+body {
+  background:url("/UT_Austin/Mini-project-06/assets/images/small-weather.jpg");
+  /* todo: remove background color - for testing only */
+  background-size: cover;
+  height:100vh;
+}
+}
+
