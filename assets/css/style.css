@@ -8,18 +8,38 @@
 }
 
 body {
-  background:url(./images/weather.jpg);
   font-family:'Roboto Slab', sans-serif;
+  background:url(./images/weather.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  
   /* todo: check scroll hidden */
-  /* disables scroll */
-  /* overflow: hidden; */
+  /* enables scroll */
+  overflow-x: scroll;
   height:100vh;
 }
 
+nav{
+  background-color: lightslategray;
+  color:white;
+  padding: 30px;
+  text-align:center;
+  font-size: 40px;
+}
+
+h3{
+  text-align: center;
+}
+
+.jumbotron{
+  background:url(./images/weather.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .container{
-  /* todo: check container padding */
+  /* todo: check container padding ad spacing */
+
   padding: 20px;
   /* todo: fix font color */
   /* font color */
@@ -38,7 +58,7 @@ body {
   font-weight: 100;
 }
 
-#cityLabel{
+#city{
   font-size: 20px;
   font-weight: 100;
   text-align: right;
@@ -49,7 +69,9 @@ body {
 #current #currentWeather{
   display:flex;
   /* fix this width */
-  width:50vw;
+  width:40vw;
+  /* position: absolute; */
+  right:20px;
   flex-direction: column;
   justify-content: space-between;
   background:grey;
@@ -60,7 +82,7 @@ body {
   border:2px solid white;
 }
 
-#current .weatherItem{
+#current .weatherItem, #today .weatherItem{
   display:flex;
   justify-content: space-between;
 }
@@ -75,7 +97,7 @@ body {
 .day{
   background:grey;
   display: flex;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   padding:10px;
   border-radius: 5px;
   border:2px solid white;
@@ -89,7 +111,7 @@ body {
 }
 
 .weatherBlock{
-  background:blue;
+  /* background:blue; */
   /* padding:20px; */
   /* position:fixed; */
   display:flex;
@@ -113,11 +135,13 @@ body {
   flex-direction: column;
   align-items:center;
   justify-content:center;
+  padding: 20px;
 }
 
 #weatherBlock .weatherItem{
   display:flex;
-  flex-direction: column;
+  justify-content: space-between;
+  /* padding:5px; */
   /* test code to make sure I am targeting the right thing */
   /* background:white; */
 
@@ -172,11 +196,11 @@ body {
     width:90vw;
 }
 
-body {
-  background:url("./images/small-weather.jpg");
-  /* todo: remove background color - for testing only */
+.jumbotron{
+  background:url(./images/small-weather.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
-  height:100vh;
 }
+
 }
 
