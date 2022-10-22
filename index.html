@@ -23,19 +23,20 @@ https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7
     <div class="container">
       <div id="current">
         <div id="currentTime" class="lead"></div>
+        <div id="cityLabel">
+          <div id="city" class="city">Charlotte</div>
+          <div id="coords" class="coords">35.22731679270498, -80.94865412987487</div>
+        </div>
         <div id="currentWeather" class="weather">
-          <!-- todo: fix this icon size -->
+    
           <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
-          <div class="weatherItem"><p>temperature</p><p>97</p></div>
-          <div class="weatherItem"><p>wind speed</p><p>50</p></div>
-          <div class="weatherItem"><p>humidity</p><p>95%</p></div>
+          <div class="weatherItem" id="currentTemp"><p>temperature</p><p>97</p></div>
+          <div class="weatherItem" id="currentWind"><p>wind speed</p><p>50</p></div>
+          <div class="weatherItem" id="currentHumidity"><p>humidity</p><p>95%</p></div>
         </div>
       </div>
 
-      <div>
-        <div id="city" class="city">Charlotte</div>
-        <div id="coords" class="coords">35.22731679270498, -80.94865412987487</div>
-      </div>
+      
     </div>
 
     <div id="weatherBlock" class="weatherBlock">
@@ -137,4 +138,3 @@ https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
-

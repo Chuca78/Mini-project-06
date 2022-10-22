@@ -8,7 +8,7 @@
 }
 
 body {
-  background:url("/UT_Austin/Mini-project-06/assets/images/weather.jpg");
+  background:url(./images/weather.jpg);
   font-family:'Roboto Slab', sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,6 +37,13 @@ body {
   font-size: 30px;
   font-weight: 100;
 }
+
+#cityLabel{
+  font-size: 20px;
+  font-weight: 100;
+  text-align: right;
+  color:white;
+}
   
 /* todo: fix box for current weather */
 #current #currentWeather{
@@ -50,7 +57,7 @@ body {
   border-radius: 15px;
   margin:10px;
   /* border */
-  border:2px solid white; */
+  border:2px solid white;
 }
 
 #current .weatherItem{
@@ -164,8 +171,9 @@ body {
     /* fix this width */
     width:90vw;
 }
+
 body {
-  background:url("/UT_Austin/Mini-project-06/assets/images/small-weather.jpg");
+  background:url("./images/small-weather.jpg");
   /* todo: remove background color - for testing only */
   background-size: cover;
   height:100vh;
