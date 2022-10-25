@@ -27,36 +27,18 @@ https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7
       <div id="current">
         <div id="currentTime" class="lead"></div>
         <div class="cityLabel" id="city"></div>
-          
 
-<!-- todo: test code for search bar-->
-<div class="container-fluid my-lg-0">
-  <!--Main Row starts -->
-      <div class="row">
-        <!-- Left column starts -->
-        <div class="col-sm-3 bg-light" style=" padding-top: 10px;">
-          <div class="blockquote"><p>Search for a city</p></div>
-          <form class="form-inline my-2 my-lg-0">
-            <input id='user_city_text' class="form-control mr-sm-2" 
-            type="search" placeholder="Search" aria-label="Search">
-            <button id='user_citysearch_bt' type="button" class="btn btn-primary"><i class="fas fa-search"></i></button>
-              <div class='search-hx'></div>
-          </form>
-        <div id="user_city_list">
-  <!-- Ending of the user-city-list div -->
-        </div>
-        </div>
-       <!-- Left column ends -->
-      <!-- Right column starts -->
-  <!-- todo: end of test code -->
-        
+        <form>
+          <input type="text" placeholder="Search for a city" autofocus>
+          <button type="submit">SUBMIT</button>
+          <span class="msg"></span>
+        </form>
+
         <div id="currentWeather">
           
         </div>
       </div>
     </div>
-
-
 
     <div id="weatherBlock" class="weatherBlock">
       
