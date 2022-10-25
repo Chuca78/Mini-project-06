@@ -18,122 +18,73 @@ https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7
 
 <body>
   <nav>Weather Dashboard</nav>
+
+
   <!-- <header class="jumbotron"> -->
     <!-- <h1 class="display-3">Weather Dashboard</h1> -->
+  <!-- </header> -->
     <div class="container">
       <div id="current">
         <div id="currentTime" class="lead"></div>
-        <div class="cityLabel" id="city">
-          <!-- todo: remove this code -->
-          <!-- <div id="city" class="city">Charlotte</div>
-          <div id="coords" class="coords">35.22731679270498, -80.94865412987487</div> -->
-        </div>
+        <div class="cityLabel" id="city"></div>
+          
 
-        <!-- todo: is this needed? display current icon??? -->
-        <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon"> -->
+<!-- todo: test code for search bar-->
+<div class="container-fluid my-lg-0">
+  <!--Main Row starts -->
+      <div class="row">
+        <!-- Left column starts -->
+        <div class="col-sm-3 bg-light" style=" padding-top: 10px;">
+          <div class="blockquote"><p>Search for a city</p></div>
+          <form class="form-inline my-2 my-lg-0">
+            <input id='user_city_text' class="form-control mr-sm-2" 
+            type="search" placeholder="Search" aria-label="Search">
+            <button id='user_citysearch_bt' type="button" class="btn btn-primary"><i class="fas fa-search"></i></button>
+              <div class='search-hx'></div>
+          </form>
+        <div id="user_city_list">
+  <!-- Ending of the user-city-list div -->
+        </div>
+        </div>
+       <!-- Left column ends -->
+      <!-- Right column starts -->
+  <!-- todo: end of test code -->
+        
         <div id="currentWeather">
           
         </div>
       </div>
     </div>
-  <!-- </header> -->
+
 
 
     <div id="weatherBlock" class="weatherBlock">
       
       <div class="day">
-      <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon"> -->
-      <div id="today" class="today">
-        <div class="todayForecast">
-        <!-- <div class="dayLabel">Today's Weather</div>
-        <div class="weatherItem" id="temp"><p>temperature</p><p>97</p></div>
-        <div class="weatherItem" id="windSpeed"><p>wind speed</p><p>50</p></div>
-        <div class="weatherItem" id="humidity"><p>humidity</p><p>0%</p></div> -->
+        <div id="today" class="today">
+          <div class="todayForecast"></div>
         </div>
       </div>
+
+      <div id="forecast" class="forecast">
+        <div class="futureDay1" id="forecast1"></div>
+      </div>
+
+      <div id="forecast" class="forecast">
+        <div class="futureDay2" id="forecast2"></div>
+      </div>
+
+      <div id="forecast" class="forecast">
+        <div class="futureDay2" id="forecast3"></div>
+      </div>
+
+      <div id="forecast" class="forecast">
+        <div class="futureDay2" id="forecast4"></div>
+      </div>
+
+      <div id="forecast" class="forecast">
+        <div class="futureDay2" id="forecast5"></div>
     </div>
-
-
-      <div id="forecast" class="forecast">
-        <div class="futureDay1" id="forecast1">
-        <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon"> -->
-        <!-- <div class="dayLabel">Tomorrow</div> -->
-        <!-- <div class="weatherItem"><p>temperature high</p><p>97</p></div>
-        <div class="weatherItem"><p>temperature low</p><p>97</p></div>
-        <div class="weatherItem"><p>wind speed</p><p>50</p></div>
-        <div class="weatherItem"><p>humidity</p><p>95%</p></div> -->
-        </div>
-      </div>
-
-      <div id="forecast" class="forecast">
-        <div class="futureDay2" id="forecast2">
-        <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
-        <div class="dayLabel">Day 2</div>
-        <div class="weatherItem"><p>Temp</p><p>97 &#8457</p></div>
-        <div class="weatherItem"><p>Wind</p><p>50 mph</p></div>
-        <div class="weatherItem"><p>Humidity</p><p>95%</p></div> -->
-        </div>
-      </div>
-
-      <div id="forecast" class="forecast">
-        <div class="futureDay2" id="forecast3">
-        <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
-        <div class="dayLabel">Day 3</div>
-        <div class="weatherItem"><p>Temp</p><p>97 &#8457</p></div>
-        <div class="weatherItem"><p>Wind</p><p>50 mph</p></div>
-        <div class="weatherItem"><p>Humidity</p><p>95%</p></div> -->
-        </div>
-      </div>
-
-      <div id="forecast" class="forecast">
-        <div class="futureDay2" id="forecast4">
-        <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
-        <div class="dayLabel">Day 4</div>
-        <div class="weatherItem"><p>Temp</p><p>97 &#8457</p></div>
-        <div class="weatherItem"><p>Wind</p><p>50 mph</p></div>
-        <div class="weatherItem"><p>Humidity</p><p>95%</p></div> -->
-        </div>
-      </div>
-
-      <div id="forecast" class="forecast">
-        <div class="futureDay2" id="forecast5">
-        <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weatherIcon">
-        <div class="dayLabel">Day 5</div>
-        <div class="weatherItem"><p>Temp</p><p>97 &#8457</p></div>
-        <div class="weatherItem"><p>Wind</p><p>50 mph</p></div>
-        <div class="weatherItem"><p>Humidity</p><p>95%</p></div> -->
-      </div>
-    </div>
-
-
-
-  
-      <!-- todo: use these GPS coordinates for the cities -->
-        <!-- GPS Coordinates by city -->
-        <!-- Atlanta -->
-        <!-- 33.641756279663184, -84.44453746058473 -->
-        <!-- Charlotte-->
-        <!-- 35.22731679270498, -80.94865412987487 -->
-        <!-- Chicago -->
-        <!-- 41.9802266281285, -87.90895962753375 -->
-        <!-- Dallas -->
-        <!-- 32.8998682634201, -97.04025595132558 -->
-        <!-- Denver -->
-        <!-- 39.856491609181006, -104.67366250086123 -->
-        <!-- Kansas City -->
-        <!-- 39.30357787753539, -94.70916304320826 -->
-        <!-- Los Angeles -->
-        <!-- 33.94152657558148, -118.40857291824784 -->
-        <!-- New York -->
-        <!-- 40.77714644041703, -73.87390152966489 -->
-        <!-- Orlando -->
-        <!-- 28.41792611851811, -81.3042738490861 -->
-        <!-- Seattle -->
-        <!-- 47.447995345602216, -122.30891536195067 -->
-
-
-      <!-- this is the link for the weather data -->
-  <!-- <a href="https://api.openweathermap.org/data/2.5/forecast?lat=35.22731679270498&lon=-80.94865412987487&mode=xml&appid=e55c7e382f794c24ff4d937e890f4431&units=imperial">This is a link to Weather</a> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
