@@ -31,11 +31,12 @@ h3{
   text-align: center;
 }
 
-.jumbotron{
+/* todo: remove this */
+/* .jumbotron{
   background:url(./images/weather.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 .container{
   /* todo: check container padding ad spacing */
@@ -162,6 +163,8 @@ h3{
 }
 
 /* media query for medium screens */
+
+/* todo: fix footer */
 @media screen and (max-width: 992px) {
   .weatherBlock{
     justify-content: start;
@@ -169,7 +172,7 @@ h3{
     overflow-y: scroll;
     padding:10px;
     /* todo: remove background color - for testing only */
-    background:purple;
+    /* background:purple; */
   }
 
   #current #currentWeather{
@@ -180,6 +183,8 @@ h3{
 }
 
 /* media query for smaller screens */
+
+/* todo: fix footer */
 @media screen and (max-width: 768px) {
   .weatherBlock{
     justify-content: start;
@@ -187,7 +192,7 @@ h3{
     overflow-y: scroll;
     padding:10px;
     /* todo: remove background color - for testing only */
-    background:red;
+    /* background:red; */
   }
 
   #current #currentWeather{
@@ -196,10 +201,15 @@ h3{
     width:90vw;
 }
 
-.jumbotron{
+body {
+  font-family:'Roboto Slab', sans-serif;
   background:url(./images/small-weather.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  /* todo: check scroll hidden */
+  /* enables scroll */
+  overflow-x: scroll;
+  height:100vh;
 }
 
 }
