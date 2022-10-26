@@ -13,6 +13,8 @@ N/A
 The user story is a traveler wants to be able to view weather details for multiple cities of their choosing. The weather application uses the user's geo-location to give them the current weather where they are currently. The user can then enter any city of their choosing to see current and forecasted weather.
 The external URL for this daily schedule is:
 https://chuca78.github.io/Weather_Application/
+![chuca78 github io_Weather_Application_](https://user-images.githubusercontent.com/97859682/197927835-221b11b8-62a6-4f20-9e62-67a6cdda150a.png)
+
 
 ## Credits
 
