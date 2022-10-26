@@ -1,8 +1,3 @@
-<!-- API key: e55c7e382f794c24ff4d937e890f4431
-
-
-https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7e382f794c24ff4d937e890f4431; -->
-
 <!doctype html>
 
 <html lang="en">
@@ -14,56 +9,41 @@ https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=e55c7
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<!-- todo: clean up body and remove code that has been moved to js -->
-
 <body>
   <nav>Weather Dashboard</nav>
-
-
-  <!-- <header class="jumbotron"> -->
-    <!-- <h1 class="display-3">Weather Dashboard</h1> -->
-  <!-- </header> -->
     <div class="container">
       <div id="current">
         <div id="currentTime" class="lead"></div>
         <div class="cityLabel" id="city"></div>
-
         <form>
-          <input type="text" placeholder="Search for a city" autofocus>
-          <button type="submit">SUBMIT</button>
+          <input class=textarea type="text" placeholder="Search for a city" autofocus>
+          <button class=submitBtn id=button type="submit">SUBMIT</button>
+          <button id="cityBtn" id=button type="submit"></button>
           <span class="msg"></span>
         </form>
-
         <div id="currentWeather">
-          
         </div>
       </div>
     </div>
 
     <div id="weatherBlock" class="weatherBlock">
-      
       <div class="day">
         <div id="today" class="today">
           <div class="todayForecast"></div>
         </div>
       </div>
-
       <div id="forecast" class="forecast">
         <div class="futureDay1" id="forecast1"></div>
       </div>
-
       <div id="forecast" class="forecast">
         <div class="futureDay2" id="forecast2"></div>
       </div>
-
       <div id="forecast" class="forecast">
         <div class="futureDay2" id="forecast3"></div>
       </div>
-
       <div id="forecast" class="forecast">
         <div class="futureDay2" id="forecast4"></div>
       </div>
-
       <div id="forecast" class="forecast">
         <div class="futureDay2" id="forecast5"></div>
     </div>

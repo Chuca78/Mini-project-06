@@ -12,7 +12,7 @@ const forecastE3 = document.getElementById('forecast3');
 const forecastE4 = document.getElementById('forecast4');
 const forecastE5 = document.getElementById('forecast5');
 const APIkey = 'APPID=e55c7e382f794c24ff4d937e890f4431';
-
+const newBtn = document.getElementById('cityBtn');
 
 // displays current day and date in the header
 var today = moment();
@@ -30,26 +30,17 @@ function getWeather(){
 
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + "&lon=" + longitude + '&exclude=hourly,minutely&units=imperial&' + APIkey).then(res => res.json()).then(data => {
 
-    // todo: remove these
-    // console.log(data);
-    // console.log(latitude);
-    // console.log(longitude);
-
-// todo: use these variables to retrieve current weather
+// these variables are used to retrieve current weather
     var city_current=data.name
     var temp_current= Math.floor((data.main.temp));
     var humidity_current=data.main.humidity
     var wind_current=data.wind.speed
 
-    // todo: fix city display
     cityEl.innerHTML = 
     `<div class="cityLabel" id=city></div><div>${city_current}</div>`;
 
-    // todo: check this - doesn't work on deployed website - maybe due to api key on github???
-    // this displays current weather conditions
     currentWeatherEl.innerHTML = 
     `<h3>Current Weather</h3>
-    
     <div class="weatherItem" id="currentTemperature">
     <div>Temperature</div>
     <div>${temp_current}\u00B0F</div>
@@ -61,9 +52,8 @@ function getWeather(){
     <div>Humidity</div>
     <div>${humidity_current}%</div>
     </div>`;
-
-    })
-    forecastWeather()
+})
+forecastWeather()
 
 function forecastWeather(){
     navigator.geolocation.getCurrentPosition(success);
@@ -89,8 +79,6 @@ todayForecastEl.innerHTML =
         <div>${data.list[0].main.humidity}%</div>
     </div>`
 
-// todo: fix the forecast code
-// forecast for the next 5 days
 forecastEl.innerHTML = 
     `<div class="futureDay1">
     <img src="https://openweathermap.org/img/wn/${data.list[6].weather[0].icon}@2x.png" alt="weather-icon" class="weatherIcon">
@@ -165,36 +153,29 @@ forecastE5.innerHTML =
         <div>Humidity</div>
         <div>${data.list[39].main.humidity}%</div>
     </div>`
-
-})
+    })
     }
 }}
 }
 
 // if geolocation fails - weather defaults to Charlotte weather
-
 defaultWeather()
 function defaultWeather() {
 
-
-    // lat=35.21456035841298&lon=-80.94734678937337
     fetch('https://api.openweathermap.org/data/2.5/weather?q=Charlotte&exclude=hourly,minutely&units=imperial&' + APIkey).then(res => res.json()).then(data => {
 
-// todo: use these variables to retrieve current weather
+// these variables are used to retrieve current weather
     var city_current=data.name
     var temp_current= Math.floor((data.main.temp));
     var humidity_current=data.main.humidity
     var wind_current=data.wind.speed
 
-    // todo: fix city display
     cityEl.innerHTML = 
     `<div class="cityLabel" id=city></div><div>${city_current}</div>`;
 
-    // todo: check this - doesn't work on deployed website - maybe due to api key on github???
     // this displays current weather conditions
     currentWeatherEl.innerHTML = 
     `<h3>Weather in Charlotte, NC</h3>
-    
     <div class="weatherItem" id="currentTemperature">
     <div>Temperature</div>
     <div>${temp_current}\u00B0F</div>
@@ -206,12 +187,9 @@ function defaultWeather() {
     <div>Humidity</div>
     <div>${humidity_current}%</div>
     </div>`;
-    })
+})
 
-
-// todo: fix this
-// today's weather forecast
-// Getting weather forecast based on user location
+// today's weather forecast in Charlotte
 forecastWeather()
 
 function forecastWeather(){
@@ -232,8 +210,7 @@ todayForecastEl.innerHTML =
         <div>${data.list[0].main.humidity}%</div>
     </div>`
 
-// todo: fix the forecast code
-// forecast for the next 5 days
+// forecast for the next 5 days in Charlotte
 forecastEl.innerHTML = 
     `<div class="futureDay1">
     <img src="https://openweathermap.org/img/wn/${data.list[6].weather[0].icon}@2x.png" alt="weather-icon" class="weatherIcon">
@@ -308,39 +285,32 @@ forecastE5.innerHTML =
         <div>Humidity</div>
         <div>${data.list[39].main.humidity}%</div>
     </div>`
-
-})
+    })
 }
 }
-
 
 const form = document.querySelector("form");
 const input = document.querySelector("input");
-// todo: create an input function here
+
 // function to show weather data in locations by city
 form.addEventListener("submit", e => {
     e.preventDefault();
     let inputVal = input.value;
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputVal + '&exclude=hourly,minutely&units=imperial&' + APIkey).then(res => res.json()).then(data => {
-    console.log(inputVal);
-    console.log(data)
 
-// todo: use these variables to retrieve current weather
+// these variables are used to retrieve current weather
 var city_current=data.name
 var temp_current= Math.floor((data.main.temp));
 var humidity_current=data.main.humidity
 var wind_current=data.wind.speed
 
-// todo: fix city display
 cityEl.innerHTML = 
 `<div class="cityLabel" id=city></div><div>${city_current}</div>`;
 
-// todo: check this - doesn't work on deployed website - maybe due to api key on github???
 // this displays current weather conditions
 currentWeatherEl.innerHTML = 
 `<h3>Current Weather</h3>
-
 <div class="weatherItem" id="currentTemperature">
 <div>Temperature</div>
 <div>${temp_current}\u00B0F</div>
@@ -380,7 +350,6 @@ todayForecastEl.innerHTML =
         <div>${data.list[0].main.humidity}%</div>
     </div>`
 
-// todo: fix the forecast code
 // forecast for the next 5 days
 forecastEl.innerHTML = 
     `<div class="futureDay1">
@@ -459,17 +428,25 @@ forecastE5.innerHTML =
     })
     }
 }
-
     form.reset();
     input.focus();
     return;
 })
 
-
-
-
-
-
-// todo: create a local storage history function here
 // local storage history function
+cityStorage = []
 
+$(".submitBtn").on("click", function() {
+    var textValue = $(this).siblings(".textarea").val();
+    localStorage.setItem("city", textValue);
+    cityStorage.push(textValue);
+
+    // for (let index = 0; index < cityStorage.length; index++) {
+    //     const element = cityStorage[index];
+    //     var button = document.createElement("button");
+    //     button
+    //     console.log(element);
+    // }
+    // newBtn.innerHTML = `<button class=submitBtn type="submit">`+cityStorage+`</button>`
+    // console.log(cityStorage);
+})

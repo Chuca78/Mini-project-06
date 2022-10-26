@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;400;700&display=swap');
 
-
 *{
   box-sizing: border-box;
   margin: 0;
@@ -12,9 +11,6 @@ body {
   background:url(./images/weather.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  
-  /* todo: check scroll hidden */
-  /* enables scroll */
   overflow-x: scroll;
   height:100vh;
 }
@@ -31,32 +27,9 @@ h3{
   text-align: center;
 }
 
-/* todo: remove this */
-/* .jumbotron{
-  background:url(./images/weather.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
-
-
-/* todo: style this button  */
-/* button,
-input {
-  border: none;
-  background: none;
-  outline: none;
-  color: inherit;
-} */
-
 
 .container{
-  /* todo: check container padding ad spacing */
-
   padding: 20px;
-  /* todo: fix font color */
-  /* font color */
-  /* color:white; */
 }
 
 #current{
@@ -66,7 +39,6 @@ input {
 }
 
 #currentTime{
-  /* todo: fix time font */
   font-size: 30px;
   font-weight: 100;
 }
@@ -78,12 +50,10 @@ input {
   color:white;
 }
   
-/* todo: fix box for current weather */
+
 #current #currentWeather{
   display:flex;
-  /* fix this width */
   width:40vw;
-  /* position: absolute; */
   right:20px;
   flex-direction: column;
   justify-content: space-between;
@@ -91,7 +61,6 @@ input {
   padding:20px;
   border-radius: 15px;
   margin:10px;
-  /* border */
   border:2px solid white;
 }
 
@@ -110,13 +79,10 @@ input {
 .day{
   background:grey;
   display: flex;
-  /* margin: 0 10px; */
   padding:10px;
   border-radius: 5px;
   border:2px solid white;
   text-align: center;
-  /* test code to make sure I am targeting the right thing */
-  /* background:white; */
 }
 
 #forecast{
@@ -124,12 +90,7 @@ input {
 }
 
 .weatherBlock{
-  /* background:blue; */
-  /* padding:20px; */
-  /* position:fixed; */
   display:flex;
-  /* font color */
-  /* color:white; */
   width:100%;
   align-items:center;
   justify-content:center;
@@ -154,10 +115,6 @@ input {
 #weatherBlock .weatherItem{
   display:flex;
   justify-content: space-between;
-  /* padding:5px; */
-  /* test code to make sure I am targeting the right thing */
-  /* background:white; */
-
 }
 
 #forecast{
@@ -170,45 +127,35 @@ input {
   border-radius: 5px;
   border:2px solid white;
   text-align: center;
-  /* test code to make sure I am targeting the right thing */
-  /* background:white; */
 }
 
 /* media query for medium screens */
-
-/* todo: fix footer */
 @media screen and (max-width: 992px) {
 
-  body{
-    height:120vh;
-  }
-  .weatherBlock{
-    justify-content: start;
-    align-items: none;
-    overflow-y: scroll;
-    padding:10px;
-    /* todo: remove background color - for testing only */
-    /* background:purple; */
-  }
+body{
+  height:120vh;
+}
+  
+.weatherBlock{
+  justify-content: start;
+  align-items: none;
+  overflow-y: scroll;
+  padding:10px;
+}
 
-  #current #currentWeather{
-    display:flex;
-    /* fix this width */
+#current #currentWeather{
+  display:flex;
     width:90vw;
 }
 }
 
 /* media query for smaller screens */
-
-/* todo: fix footer */
 @media screen and (max-width: 768px) {
   .weatherBlock{
     justify-content: start;
     align-items: none;
     overflow-x: scroll;
     padding:10px;
-    /* todo: remove background color - for testing only */
-    /* background:red; */
   }
 
   #current #currentWeather{
@@ -223,8 +170,6 @@ body {
   background:url(./images/small-weather.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  /* todo: check scroll hidden */
-  /* enables scroll */
   overflow-x: scroll;
   height:130vh;
 }
