@@ -294,9 +294,11 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 
 // function to show weather data in locations by city
-form.addEventListener("submit", e => {
-    e.preventDefault();
+form.addEventListener("submit", event =>{
+    event.preventDefault();
+    getWeatherInfo()
 
+function getWeatherInfo(){
 
     let inputVal = input.value;
     
@@ -436,8 +438,6 @@ forecastE5.innerHTML =
     form.reset();
     input.focus();
     return;
-})
-
 
 function saveCity(city) {
     var key = "cityName";
@@ -474,14 +474,13 @@ function renderCityName() {
         button.attr("id", cities[i]);
         button.on('click', historyClicked);
         buttons.append(button);
-
     }
 }
+}})
+
 
 function historyClicked(event) {
     event.preventDefault();
     var buttonClicked = event.target;
     getWeatherInfo(buttonClicked.id);
 }
-
-
