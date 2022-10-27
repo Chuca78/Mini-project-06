@@ -11,41 +11,56 @@
 
 <body>
   <nav>Weather Dashboard</nav>
-    <div class="container">
-      <div id="current">
-        <div id="currentTime" class="lead"></div>
-        <div class="cityLabel" id="city"></div>
-        <form>
-          <input class=textarea type="text" placeholder="Search for a city" autofocus>
-          <button class=submitBtn id=button type="submit">SUBMIT</button>
-          <button id="cityBtn" id=button type="submit"></button>
-          <span class="msg"></span>
+
+
+  <!-- todo: test code -->
+
+  <form>
+  <div class="flex-container" style="width: 16rem">
+    <div class="card-body">
+      <h4>Search by City: </h4>
+        <form id="user-form" class="card-body">
+          <label class="form-label" for="cityName"></label>
+          <input name="cityName" class=textarea type="text" placeholder="City Name" type="text" autofocus="true"/><br>
+            <button type="submit" class="submitBtn" id="button" style="width: 100%">Search</button>
         </form>
-        <div id="currentWeather">
-        </div>
+        <div class="cityBtn" id="buttons-list" style="width:100%"></div>
+    </div>
+  </div>
+  </form>
+
+  <div class="container flex-child">
+    <div class="card-deck" id="card-deck"></div>
+  </div>
+
+
+
+  <div class="container" id="current">
+    <div id="currentTime" class="lead"></div>
+    <div class="cityLabel" id="city"></div>
+    <div id="currentWeather"></div>
+  </div>
+
+  <div id="weatherBlock" class="weatherBlock">
+    <div class="day">
+      <div id="today" class="today">
+        <div class="todayForecast"></div>
       </div>
     </div>
-
-    <div id="weatherBlock" class="weatherBlock">
-      <div class="day">
-        <div id="today" class="today">
-          <div class="todayForecast"></div>
-        </div>
-      </div>
-      <div id="forecast" class="forecast">
-        <div class="futureDay1" id="forecast1"></div>
-      </div>
-      <div id="forecast" class="forecast">
-        <div class="futureDay2" id="forecast2"></div>
-      </div>
-      <div id="forecast" class="forecast">
-        <div class="futureDay2" id="forecast3"></div>
-      </div>
-      <div id="forecast" class="forecast">
-        <div class="futureDay2" id="forecast4"></div>
-      </div>
-      <div id="forecast" class="forecast">
-        <div class="futureDay2" id="forecast5"></div>
+    <div id="forecast" class="forecast">
+      <div class="futureDay1" id="forecast1"></div>
+    </div>
+    <div id="forecast" class="forecast">
+      <div class="futureDay2" id="forecast2"></div>
+    </div>
+    <div id="forecast" class="forecast">
+      <div class="futureDay2" id="forecast3"></div>
+    </div>
+    <div id="forecast" class="forecast">
+      <div class="futureDay2" id="forecast4"></div>
+    </div>
+    <div id="forecast" class="forecast">
+      <div class="futureDay2" id="forecast5"></div>
     </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -53,4 +68,3 @@
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
-

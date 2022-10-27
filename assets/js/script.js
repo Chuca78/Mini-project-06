@@ -12,7 +12,8 @@ const forecastE3 = document.getElementById('forecast3');
 const forecastE4 = document.getElementById('forecast4');
 const forecastE5 = document.getElementById('forecast5');
 const APIkey = 'APPID=e55c7e382f794c24ff4d937e890f4431';
-const newBtn = document.getElementById('cityBtn');
+var buttons = $('#buttons-list');
+
 
 // displays current day and date in the header
 var today = moment();
@@ -295,9 +296,13 @@ const input = document.querySelector("input");
 // function to show weather data in locations by city
 form.addEventListener("submit", e => {
     e.preventDefault();
+
+
     let inputVal = input.value;
+    
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputVal + '&exclude=hourly,minutely&units=imperial&' + APIkey).then(res => res.json()).then(data => {
+        saveCity(data.name)
 
 // these variables are used to retrieve current weather
 var city_current=data.name
@@ -433,20 +438,50 @@ forecastE5.innerHTML =
     return;
 })
 
-// local storage history function
-cityStorage = []
 
-$(".submitBtn").on("click", function() {
-    var textValue = $(this).siblings(".textarea").val();
-    localStorage.setItem("city", textValue);
-    cityStorage.push(textValue);
+function saveCity(city) {
+    var key = "cityName";
+    var valueToSave = city;
+    var history = localStorage.getItem(key);
 
-    // for (let index = 0; index < cityStorage.length; index++) {
-    //     const element = cityStorage[index];
-    //     var button = document.createElement("button");
-    //     button
-    //     console.log(element);
-    // }
-    // newBtn.innerHTML = `<button class=submitBtn type="submit">`+cityStorage+`</button>`
-    // console.log(cityStorage);
-})
+    if (history === null) {
+        localStorage.setItem(key, JSON.stringify("[]"));
+        history = "[]";
+    }
+    var currentHistory = JSON.parse(history);
+    if (!history.includes(valueToSave)) {
+        currentHistory.push(valueToSave);
+        localStorage.setItem(key, JSON.stringify(currentHistory));
+    }
+    renderCityName();
+}
+
+function renderCityName() {
+    var keyToDisplay = "cityName";
+    var history = localStorage.getItem(keyToDisplay);
+    if (history === null) {
+        return;
+    }
+    var cities = JSON.parse(localStorage.getItem(keyToDisplay));
+    buttons.empty();
+
+    for (var i = 0; i < cities.length; i++) {
+        var cityItemButton = cities[i];
+
+        var button = $('<button>');
+        button.text(cityItemButton);
+        button.addClass('cityButton btn btn-outline-dark btn-sm');
+        button.attr("id", cities[i]);
+        button.on('click', historyClicked);
+        buttons.append(button);
+
+    }
+}
+
+function historyClicked(event) {
+    event.preventDefault();
+    var buttonClicked = event.target;
+    getWeatherInfo(buttonClicked.id);
+}
+
+
