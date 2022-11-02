@@ -1,35 +1,3 @@
-
-
-
-// todo: fix geolocation function
-getWeather()
-
-function getWeather(){
-    navigator.geolocation.getCurrentPosition(success);
-    function success(position) {
-  
-    latitude=position.coords.latitude;
-    longitude=position.coords.longitude;
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + "&lon=" + longitude + '&exclude=hourly,minutely&units=imperial&' + APIkey).then(res => res.json()).then(data => {
-
-    })
-}}
-
-forecastWeather()
-
-function forecastWeather(){
-    navigator.geolocation.getCurrentPosition(success);
-    function success(position) {
-  
-    latitude=position.coords.latitude;
-    longitude=position.coords.longitude;
-
-    fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + "&lon=" + longitude + '&units=imperial&' + APIkey).then(res => res.json()).then(data => {
-    })
-}}
-
-
 // todo: test code
 
 var APIkey = "e55c7e382f794c24ff4d937e890f4431";
@@ -54,8 +22,49 @@ var forecastEl = $('#forecastTitle');
 // forecastEl.hide();
 // weatherPanelEl.hide();
 
+// todo: fix geolocation function
+getWeather()
+
+function getWeather(){
+    navigator.geolocation.getCurrentPosition(success);
+    function success(position) {
+  
+    latitude=position.coords.latitude;
+    longitude=position.coords.longitude;
+
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + "&lon=" + longitude + '&exclude=hourly,minutely&units=imperial&' + APIkey).then(res => res.json()).then(data => {
+
+// todo: this code doesn't work... yet
+        if (response.ok) {
+            response.json().then(function (data) {
+                // saveCity(data.name)
+                displayCurrentWeather(data);
+                displayWeather(data);
+            });
+        }
+
+    })
+}}
+
+forecastWeather()
+
+function forecastWeather(){
+    navigator.geolocation.getCurrentPosition(success);
+    function success(position) {
+  
+    latitude=position.coords.latitude;
+    longitude=position.coords.longitude;
+
+    fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + "&lon=" + longitude + '&units=imperial&' + APIkey).then(res => res.json()).then(data => {
+    
 
 
+    })
+}}
+
+
+
+// todo: everything after this works
 
 var formSubmitHandler = function (event) {
     event.preventDefault();
