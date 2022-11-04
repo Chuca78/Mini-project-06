@@ -18,9 +18,10 @@ var weatherPanelEl = $('#weather-panel');
 var forecastEl = $('#forecastTitle');
 
 
+
 // Hides the forecast panel - don't need this if geolocation works
-// forecastEl.hide();
-// weatherPanelEl.hide();
+forecastEl.hide();
+weatherPanelEl.hide();
 
 // todo: fix geolocation function
 getWeather()
@@ -58,7 +59,7 @@ function forecastWeather(){
     fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + "&lon=" + longitude + '&units=imperial&' + APIkey).then(res => res.json()).then(data => {
     
 
-
+console.log("geolocation success")
     })
 }}
 
