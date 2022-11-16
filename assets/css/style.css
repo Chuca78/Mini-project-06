@@ -12,6 +12,7 @@ nav{
   padding: 30px;
   text-align:center;
   font-size: 40px;
+  width:auto;
 }
 
 /* sets background image and body styling */
@@ -30,10 +31,12 @@ body {
 /* sets search bar to left and flexes current weather to right */
 .flex-container {
     display: flex;
+    /* width:900px; */
 }
 
 /* sets formatting for overall container*/
 /* search bar is not connected to this */
+
 .container{
   padding: 50px;
 }
@@ -50,8 +53,9 @@ h4 {
 /* pads forecast cards flush to search box */
 .card-deck {
     padding-top: 5%;
+    width:1000px;
     /* todo: fix overflow for forecast cards */
-    /* overflow-y: auto; */
+    overflow-y: auto;
 }
 
 /* sets formatting for all cards - search and forecast */
@@ -59,6 +63,8 @@ h4 {
   background:grey;
   border: 3px solid white;
   border-radius: 15px;
+  /* width: 1000px; */
+  /* width:80%; */
 }
 
 .input-btn {
@@ -95,10 +101,11 @@ h4 {
 }
 
 /* todo: fix scroll on resize */
+/* removed - this was the second box around each forecast day */
 /* formats each forecast day */
-.content-card {
+/* .content-card {
   border: 3px solid white;
-}
+} */
 
 /* sets formatting for current weather bar */
 #weather-panel {
@@ -122,6 +129,11 @@ h4 {
     /* overflow-y: auto; */
     height:100%;
   }
+
+  .flex-container {
+    display: flex;
+    width:900px;
+}
 
 }
 
